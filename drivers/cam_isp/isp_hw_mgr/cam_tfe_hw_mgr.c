@@ -3570,7 +3570,7 @@ static int cam_tfe_mgr_restart_hw(void *start_hw_args)
 
 	CAM_DBG(CAM_ISP, "START CSID HW ... in ctx id:%d", ctx->ctx_index);
 	/* Start the TFE CSID HW devices */
-	list_for_each_entry(hw_mgr_res, &ctx->res_list_tfe_csid, list) {
+	list_for_each_entry_reverse(hw_mgr_res, &ctx->res_list_tfe_csid, list) {
 		rc = cam_tfe_hw_mgr_start_hw_res(hw_mgr_res, ctx);
 		if (rc) {
 			CAM_ERR(CAM_ISP, "Can not start TFE CSID (%d)",
@@ -3775,7 +3775,7 @@ start_only:
 	CAM_DBG(CAM_ISP, "START CSID HW ... in ctx id:%d",
 		ctx->ctx_index);
 	/* Start the TFE CSID HW devices */
-	list_for_each_entry(hw_mgr_res, &ctx->res_list_tfe_csid, list) {
+	list_for_each_entry_reverse(hw_mgr_res, &ctx->res_list_tfe_csid, list) {
 		rc = cam_tfe_hw_mgr_start_hw_res(hw_mgr_res, ctx);
 		if (rc) {
 			CAM_ERR(CAM_ISP, "Can not start TFE CSID (%d)",
