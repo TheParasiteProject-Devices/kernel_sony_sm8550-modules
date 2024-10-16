@@ -3187,7 +3187,9 @@ static int __cam_isp_ctx_epoch_in_applied(struct cam_isp_context *ctx_isp,
 		return -EINVAL;
 	}
 
+#if 0
 	ctx_isp->frame_id_meta = epoch_done_event_data->frame_id_meta;
+#endif
 /* sony extension begin */
 #if 1
 	if (ctx_isp->reg_update_pending) {
